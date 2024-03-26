@@ -32,6 +32,7 @@ body {
   */
   /* background atalho: color image repeat position /size (ordem)*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 body * {
   /*fonte pesquisada em fonts.google nome "inter" foi copiado peso 400 e 500 e colado 
@@ -165,4 +166,15 @@ Footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* media queries at room e so funciona quando tem a linha meta viewport(td visao do conteudo) no html */
+@media (min-width: 700px) {
+  :root{
+    --bg-url: url(./assets/bg-desktop.jpg);
+}
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
