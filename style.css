@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color:  rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.01);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*background-image: url(./assets/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  /* background atalho: color image repeat position /size (ordem)*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  /*fonte pesquisada em fonts.google nome "inter" foi copiado peso 400 e 500 e colado 
+  na head do index. a outra parte colada aqui abaixo*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color)
+  /*pode escrever white tambem*/
+}
+#container {
+  width: 360px;
+  /*border: 1px solid red; pode colocar essa bordar para ver o que tem na caixa*/
+  /*height: 712px: foi retirado pois n precisa, geralmente altura acompanha o conteudo
+ o margin pode conter todas direçoes e a ordem é top right bottom e left. se colocar só um aplica para todas, se colocar duas o primeiro vai cima e baixo, segundo pros lados, se colocar tres primeira em cima segunda nas laterais, terceira embaixo como abaixo;
+ padding funciona igual*/
+  margin: 56px auto 0px;
+  padding: 0 24px;
+
+/*profile*/
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+  /* img é elemento inline e nao da pra alinhar com margin auto
+  pode alinhar tornando a imagem block pra aplicar o margin: 
+  display:block;
+  margin: auto; ou fazendo outro profile acima como foi feito.*/
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+ -webkit-backdrop-filter: blur(4px);
+ border-radius: 9999px;
+}
+
+/* links*/
+ul {
+  list-style: none; /* tira os pontinhos da lista */
+  display: flex; /* para os elementos ocuparem a caixa toda se ajeitando nela */
+  flex-direction: column; /* pra colocar os elementos um abaixo do outro */
+  gap: 16px; /*espaço entre os elementos*/
+  padding: 24px 0;
+}
+ul li a {
+  /*display: block;
+  text-align: center; ou */
+  display: flex;
+  justify-content: center; /* centraliza o texto do display tipo flex. Se fosse tipo block poderia usar o text align*/
+  align-items: center; /* alinha o texto no meio da linha*/
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none; /*se quiser botar underline pra linha sublinhar o texto*/
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+/*pseudo selector(aplica as coisas ao passar o mouse em cima)*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+/*social links*/
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+Footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
