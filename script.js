@@ -9,7 +9,7 @@ function toggleMode () {
     html.classList.toggle("light")
 
     /* Pegar a tag img */
-    const img = document.querySelector("#progile img")
+    const img = document.querySelector("#profile img")
    
    /*substituir a imagem*/
     if(html.classList.contains("light"))

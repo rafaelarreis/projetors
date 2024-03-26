@@ -41,7 +41,9 @@ body * {
   /*pode escrever white tambem*/
 }
 #container {
-  width: 360px;
+  /*coloquei width e max width pra se adaptar ao tamanho da tela*/
+  width: 100%; 
+  max-width: 588px; /*tamanho do desktop na ferramenta do desenvolvedor*/
   /*border: 1px solid red; pode colocar essa bordar para ver o que tem na caixa*/
   /*height: 712px: foi retirado pois n precisa, geralmente altura acompanha o conteudo
  o margin pode conter todas direçoes e a ordem é top right bottom e left. se colocar só um aplica para todas, se colocar duas o primeiro vai cima e baixo, segundo pros lados, se colocar tres primeira em cima segunda nas laterais, terceira embaixo como abaixo;
